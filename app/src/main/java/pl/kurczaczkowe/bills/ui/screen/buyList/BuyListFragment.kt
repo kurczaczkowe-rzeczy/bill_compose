@@ -1,5 +1,7 @@
 package pl.kurczaczkowe.bills.ui.screen.buyList
 
+import android.os.Bundle
+import android.view.View
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
@@ -12,7 +14,17 @@ class BuyListFragment : BaseFragment<BuyListEvent, BuyListViewModel>() {
 
     @Composable
     override fun OnCreateView() {
-        BuyListScreen()
+        BuyListScreen(
+            categories = viewModel.categories,
+            onClickProduct = viewModel::onClickProduct,
+            onCategoryClick = viewModel::onCategoryClick
+        )
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.fetchCategories(0)
     }
 
 }

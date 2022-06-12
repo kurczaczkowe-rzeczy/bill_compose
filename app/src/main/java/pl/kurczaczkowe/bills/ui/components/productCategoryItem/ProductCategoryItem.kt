@@ -24,7 +24,7 @@ fun ProductCategoryItem(
     backgroundColor: Color = Color.White,
     onClick: (Int) -> Unit = {},
 ) {
-    val colorText by animateColorAsState(targetValue = if (product.isBought) Color.Gray else MaterialTheme.colors.onBackground)
+    val colorText by animateColorAsState(targetValue = if (product.isBought) MaterialTheme.colors.onBackground.copy(alpha = 0.6f) else MaterialTheme.colors.onBackground)
     val width by animateFloatAsState(targetValue = if(product.isBought) 1f else 0f)
 
     Box(
@@ -56,7 +56,7 @@ fun ProductCategoryItem(
             modifier = Modifier
                 .fillMaxWidth(width)
                 .height(1.dp)
-                .background(color = Color.Gray.copy(alpha = 0.5f))
+                .background(color = MaterialTheme.colors.onBackground.copy(alpha = 0.6f))
                 .align(Alignment.CenterStart)
         )
     }
