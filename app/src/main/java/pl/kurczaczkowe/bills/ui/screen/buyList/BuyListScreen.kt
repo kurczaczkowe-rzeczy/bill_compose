@@ -1,6 +1,7 @@
 package pl.kurczaczkowe.bills.ui.screen.buyList
 
 import androidx.compose.animation.*
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -14,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import pl.kurczaczkowe.bills.ui.components.prodactCategory.ProductCategory
 import pl.kurczaczkowe.bills.ui.components.productCategoryItem.ProductCategoryItem
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BuyListScreen(
 ) {
@@ -22,7 +24,7 @@ fun BuyListScreen(
         modifier = Modifier.fillMaxSize()
     ) {
         viewModel.categories.value.forEach { category ->
-            item {
+            stickyHeader {
                 ProductCategory(
                     modifier = Modifier.padding(bottom = 8.dp),
                     showMore = category.isVisible,

@@ -3,8 +3,11 @@ package pl.kurczaczkowe.bills.ui.screen.buyList
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import pl.kurczaczkowe.bills.ui.components.productCategoryItem.Entity
 import pl.kurczaczkowe.bills.ui.components.productCategoryItem.ProductData
+import pl.kurczaczkowe.bills.ui.screen.base.BaseViewModel
+import javax.inject.Inject
 
 data class Category(
     val categoryId: Int,
@@ -19,7 +22,8 @@ data class Category(
     }
 }
 
-class BuyListViewModel : ViewModel() {
+@HiltViewModel
+class BuyListViewModel @Inject constructor(): BaseViewModel<BuyListEvent>() {
 
     val categories = mutableStateOf(
         listOf(
