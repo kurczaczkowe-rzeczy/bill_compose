@@ -9,28 +9,33 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import pl.kurczaczkowe.bills.data.model.Category
 import pl.kurczaczkowe.bills.ui.components.prodactCategory.ProductCategory
 import pl.kurczaczkowe.bills.ui.components.productCategoryItem.ProductCategoryItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BuyListScreen(
+    categories: MutableState<List<Category>> = mutableStateOf(emptyList()),
+    onClickProduct: (categoryId: Int, productId: Int) -> Unit = {_, _ -> },
+    onCategoryClick: (categoryId: Int) -> Unit = {}
 ) {
-    val viewModel = BuyListViewModel()
     LazyColumn(
         modifier = Modifier.fillMaxSize()
     ) {
-        viewModel.categories.value.forEach { category ->
+        categories.value.forEach { category ->
             stickyHeader {
                 ProductCategory(
                     modifier = Modifier.padding(bottom = 8.dp),
                     showMore = category.isVisible,
                     getRestToBuy = category.getRestInBuyList,
-                    setShowMore = { viewModel.onCategoryClick(category.categoryId) },
-                    categoryColor = Color.Red,
+                    setShowMore = { onCategoryClick(category.categoryId) },
+                    categoryColor = category.color,
                     category = {
                         Text(
                             text = category.name,
@@ -49,8 +54,8 @@ fun BuyListScreen(
                 ) {
                     ProductCategoryItem(
                         product = product,
-                        backgroundColor = if (index % 2 == 0) MaterialTheme.colors.background else Color.LightGray,
-                        onClick = {viewModel.onClickProduct(category.categoryId, it)}
+                        backgroundColor = if (index % 2 == 0) MaterialTheme.colors.background else MaterialTheme.colors.surface,
+                        onClick = { onClickProduct(category.categoryId, it) }
                     )
                 }
             }
