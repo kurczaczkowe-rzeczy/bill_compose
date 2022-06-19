@@ -21,12 +21,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import pl.kurczaczkowe.bills.R
 import pl.kurczaczkowe.bills.ui.components.productCategoryInfo.ProductCategoryInfo
 
+enum class ProductCategoryType {
+    PRODUCTS,
+    CATEGORY_ITEM
+}
+
 @Composable
 fun ProductCategory(
     modifier: Modifier = Modifier,
-    getRestToBuy: Int,
-    showMore: Boolean,
-    setShowMore: (Boolean) -> Unit,
+    getRestToBuy: Int = -1,
+    showMore: Boolean = false,
+    type: ProductCategoryType = ProductCategoryType.PRODUCTS,
+    setShowMore: (Boolean) -> Unit = {},
     categoryColor: Color,
     category: @Composable RowScope.() -> Unit,
 ) {
@@ -55,17 +61,19 @@ fun ProductCategory(
                 setShowMore(!showMore)
             }
         ) {
-            Text(
-                text = stringResource(id = R.string.left_n, getRestToBuy),
-                style = MaterialTheme.typography.h5,
-                color = Color.White
-            )
-            Icon(
-                modifier = Modifier.rotate(iconAngle),
-                imageVector = Icons.Outlined.ExpandMore,
-                contentDescription = iconDescription,
-                tint = Color.White
-            )
+            if (type == ProductCategoryType.PRODUCTS) {
+                Text(
+                    text = stringResource(id = R.string.left_n, getRestToBuy),
+                    style = MaterialTheme.typography.h5,
+                    color = Color.White
+                )
+                Icon(
+                    modifier = Modifier.rotate(iconAngle),
+                    imageVector = Icons.Outlined.ExpandMore,
+                    contentDescription = iconDescription,
+                    tint = Color.White
+                )
+            }
         }
     }
 }

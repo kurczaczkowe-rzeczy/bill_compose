@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import pl.kurczaczkowe.bills.data.model.Category
+import pl.kurczaczkowe.bills.data.model.CategoryProduct
 import pl.kurczaczkowe.bills.ui.components.prodactCategory.ProductCategory
 import pl.kurczaczkowe.bills.ui.components.productCategoryItem.Entity
 import pl.kurczaczkowe.bills.ui.components.productCategoryItem.ProductCategoryItem
@@ -26,7 +26,7 @@ import pl.kurczaczkowe.bills.ui.theme.BillsTheme
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BuyListScreen(
-    categories: MutableState<List<Category>> = mutableStateOf(emptyList()),
+    categories: MutableState<List<CategoryProduct>> = mutableStateOf(emptyList()),
     onClickProduct: (categoryId: Int, productId: Int) -> Unit = { _, _ -> },
     onCategoryClick: (categoryId: Int) -> Unit = {}
 ) {
@@ -51,7 +51,7 @@ fun BuyListScreen(
                 )
             }
 
-            itemsIndexed(category.itemList) { index, product ->
+            itemsIndexed(items = category.itemList) { index, product ->
                 AnimatedVisibility(
                     visible = category.isVisible,
                     enter = expandVertically(),
@@ -75,7 +75,7 @@ fun BuyListPreview() {
     val categories = remember {
         mutableStateOf(
             listOf(
-                Category(
+                CategoryProduct(
                     categoryId = 1,
                     name = "Category 1",
                     color = Color.Red,
@@ -85,7 +85,7 @@ fun BuyListPreview() {
                         ProductData(id = 3, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM)
                     )
                 ),
-                Category(
+                CategoryProduct(
                     categoryId = 2,
                     name = "Category 2",
                     color = Color.Green,
@@ -99,7 +99,7 @@ fun BuyListPreview() {
                         ProductData(id = 10, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
                     )
                 ),
-                Category(
+                CategoryProduct(
                     categoryId = 3,
                     name = "Category 3",
                     color = Color.Blue,

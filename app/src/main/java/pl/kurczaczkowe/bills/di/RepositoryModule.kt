@@ -5,7 +5,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import pl.kurczaczkowe.bills.data.repository.BuyListRepositoryImpl
+import pl.kurczaczkowe.bills.data.repository.CategoryRepositoryImpl
 import pl.kurczaczkowe.bills.domain.repository.BuyListRepository
+import pl.kurczaczkowe.bills.domain.repository.CategoryRepository
 import javax.inject.Singleton
 
 @Module
@@ -15,4 +17,8 @@ class RepositoryModule {
     @Singleton
     @Provides
     fun provideBuyListRepository(): BuyListRepository = BuyListRepositoryImpl()
+
+    @Singleton
+    @Provides
+    fun provideCategoryRepository(): CategoryRepository = CategoryRepositoryImpl()
 }

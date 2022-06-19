@@ -4,7 +4,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import pl.kurczaczkowe.bills.data.model.Category
+import pl.kurczaczkowe.bills.data.model.CategoryProduct
 import pl.kurczaczkowe.bills.domain.onSuccess
 import pl.kurczaczkowe.bills.domain.usecase.GetBuyListUseCase
 import pl.kurczaczkowe.bills.ui.screen.base.BaseViewModel
@@ -15,7 +15,7 @@ class BuyListViewModel @Inject constructor(
     private val getBuyListUseCase: GetBuyListUseCase
 ) : BaseViewModel<BuyListEvent>() {
 
-    val categories = mutableStateOf(emptyList<Category>())
+    val categories = mutableStateOf(emptyList<CategoryProduct>())
 
     fun fetchCategories(listId: Int) {
         viewModelScope.launch {

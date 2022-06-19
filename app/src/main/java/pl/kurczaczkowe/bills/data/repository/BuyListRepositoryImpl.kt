@@ -1,7 +1,7 @@
 package pl.kurczaczkowe.bills.data.repository
 
 import androidx.compose.ui.graphics.Color
-import pl.kurczaczkowe.bills.data.model.Category
+import pl.kurczaczkowe.bills.data.model.CategoryProduct
 import pl.kurczaczkowe.bills.domain.Either
 import pl.kurczaczkowe.bills.domain.repository.BuyListRepository
 import pl.kurczaczkowe.bills.domain.right
@@ -11,9 +11,9 @@ import pl.kurczaczkowe.bills.ui.screen.base.Failure
 
 class BuyListRepositoryImpl: BuyListRepository {
 
-    override fun getBuyList(id: Int): Either<Failure, List<Category>> {
+    override fun getBuyList(id: Int): Either<Failure, List<CategoryProduct>> {
         return listOf(
-            Category(
+            CategoryProduct(
                 categoryId = 1,
                 name = "Category 1",
                 color = Color.Red,
@@ -23,7 +23,7 @@ class BuyListRepositoryImpl: BuyListRepository {
                     ProductData(id = 3, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM)
                 )
             ),
-            Category(
+            CategoryProduct(
                 categoryId = 2,
                 name = "Category 2",
                 color = Color.Green,
@@ -57,7 +57,7 @@ class BuyListRepositoryImpl: BuyListRepository {
                     ProductData(id = 30, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
                 )
             ),
-            Category(
+            CategoryProduct(
                 categoryId = 3,
                 name = "Category 3",
                 color = Color.Blue,
