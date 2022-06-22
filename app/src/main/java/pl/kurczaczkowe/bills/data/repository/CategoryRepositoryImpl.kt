@@ -1,22 +1,17 @@
 package pl.kurczaczkowe.bills.data.repository
 
-import androidx.compose.ui.graphics.Color
-import pl.kurczaczkowe.bills.data.model.Category
-import pl.kurczaczkowe.bills.domain.Either
+import kotlinx.coroutines.flow.Flow
+import pl.kurczaczkowe.bills.db.dao.CategoryDao
+import pl.kurczaczkowe.bills.db.entity.CategoryEntity
 import pl.kurczaczkowe.bills.domain.repository.CategoryRepository
-import pl.kurczaczkowe.bills.domain.right
-import pl.kurczaczkowe.bills.ui.screen.base.Failure
+import javax.inject.Inject
 
-class CategoryRepositoryImpl: CategoryRepository {
+class CategoryRepositoryImpl @Inject constructor(
+    private val categoryDao: CategoryDao
+): CategoryRepository {
 
-    override fun getCategories(): Either<Failure, List<Category>> {
-        return categories.right()
+    override fun getCategories(): Flow<List<CategoryEntity>> {
+        return categoryDao.getCategory()
     }
-
-    private val categories = listOf(
-        Category(id = 0, name = "Category 1", color = Color.Red),
-        Category(id = 1, name = "Category 2", color = Color.Green),
-        Category(id = 2, name = "Category 3", color = Color.Blue),
-    )
 
 }

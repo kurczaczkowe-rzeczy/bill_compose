@@ -3,7 +3,10 @@ package pl.kurczaczkowe.bills.ui.screen.categoryList
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import pl.kurczaczkowe.bills.data.model.Category
 import pl.kurczaczkowe.bills.domain.None
 import pl.kurczaczkowe.bills.domain.onFailure
 import pl.kurczaczkowe.bills.domain.onSuccess
@@ -23,18 +26,25 @@ class CategoryListViewModel @Inject constructor(
         viewModelScope.launch {
             getCategoriesUseCase.execute(None) { response ->
                 response.onSuccess {
-                    if (it.isEmpty()){
-                        categoryListState.value = CategoryListState.Empty
-                        return@onSuccess
+                    viewModelScope.launch {
+                        handleGetCategorySuccess(it)
                     }
-
-                    categoryListState.value = CategoryListState.Success(it)
-
                 }
                 response.onFailure {
                     categoryListState.value = CategoryListState.Failure
                 }
             }
+        }
+    }
+
+    private suspend fun handleGetCategorySuccess(response: Flow<List<Category>>){
+        response.collect {
+            if (it.isEmpty()) {
+                categoryListState.value = CategoryListState.Empty
+                return@collect
+            }
+
+            categoryListState.value = CategoryListState.Success(it)
         }
     }
 }

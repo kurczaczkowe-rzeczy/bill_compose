@@ -8,6 +8,19 @@
     <string name="left_n">Pozostało: %d</string>
     <string name="category_name">Nazwa kategorii</string>
 
+<!--    categories-->
+    <string name="category_name_meat">Mięso</string>
+    <string name="category_name_bread">Pieczywo</string>
+    <string name="category_name_seafood">Ryby i owoce morza</string>
+    <string name="category_name_vegetables">Warzywa i owoce</string>
+    <string name="category_name_dairy">Nabiał</string>
+    <string name="category_name_XXX">Produkty sypkie</string>
+    <string name="category_name_spices">Przyprawy</string>
+    <string name="category_name_canned">Konserwowe</string>
+    <string name="category_name_alcohol">Alkohole</string>
+    <string name="category_name_chemicals">Chemia</string>
+    <string name="category_name_other">Inne</string>
+
     <string name="general_error_title">Nastąpił nieoczekiwany problem!</string>
     <string name="general_error_description">Możesz zgłosić ten problem na %s lub spróbować ponownie poźniej.</string>
 
