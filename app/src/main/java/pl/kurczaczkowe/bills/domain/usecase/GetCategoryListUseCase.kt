@@ -19,7 +19,7 @@ class GetCategoryListUseCase(
             .map {
                 it.map {
                     Category(
-                        id = it.idCategory,
+                        id = it.idCategory ?: 0,
                         name = it.nameCategory,
                         color = Color(it.colorCategory)
                     )

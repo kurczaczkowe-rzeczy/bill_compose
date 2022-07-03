@@ -10,4 +10,6 @@ import pl.kurczaczkowe.bills.ui.screen.base.Failure
 interface CategoryRepository {
 
     fun getCategories(): Flow<List<CategoryEntity>>
+
+    suspend fun createCategory(category: CategoryEntity): Either<Failure, Unit>
 }

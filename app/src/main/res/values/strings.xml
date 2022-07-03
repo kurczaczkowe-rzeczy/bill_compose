@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bills</string>
     <string name="support_email">support@example.com</string>
+    <string name="save">Zapisz</string>
 
     <string name="show_more">Pokaż więcej</string>
     <string name="show_less">Pokaż mniej</string>
@@ -8,7 +9,7 @@
     <string name="left_n">Pozostało: %d</string>
     <string name="category_name">Nazwa kategorii</string>
 
-<!--    categories-->
+    <!--    categories-->
     <string name="category_name_meat">Mięso</string>
     <string name="category_name_bread">Pieczywo</string>
     <string name="category_name_seafood">Ryby i owoce morza</string>
@@ -24,5 +25,12 @@
     <string name="general_error_title">Nastąpił nieoczekiwany problem!</string>
     <string name="general_error_description">Możesz zgłosić ten problem na %s lub spróbować ponownie poźniej.</string>
 
+    <!--    category list-->
     <string name="empty_category_list">Nie masz żadnych kategorii.</string>
+
+    <!--    add category-->
+    <string name="add_category_input_description">Wpisz nazwę kategorii</string>
+    <string name="add_category_input_label">Wpisz nazwę nowej kategorii oraz kolor, który pomoże Ci tą kategorię rozpoznać</string>
+    <string name="add_category_initial_value">Zabawki</string>
+    <string name="chooseColor">Wybierz kolor</string>
 </resources>
