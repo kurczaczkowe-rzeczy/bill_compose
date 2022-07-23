@@ -3,8 +3,8 @@ package pl.kurczaczkowe.bills.ui.screen.addCategory
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import pl.gungnir.base.BaseFragment
 import pl.kurczaczkowe.bills.R
-import pl.kurczaczkowe.bills.ui.screen.base.*
 
 @AndroidEntryPoint
 class AddCategoryFragment : BaseFragment<AddCategoryEvent, AddCategoryViewModel>() {

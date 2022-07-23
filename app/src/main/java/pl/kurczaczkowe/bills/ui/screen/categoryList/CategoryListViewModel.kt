@@ -6,12 +6,12 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import pl.gungnir.base.BaseViewModel
+import pl.gungnir.base.None
+import pl.gungnir.base.onFailure
+import pl.gungnir.base.onSuccess
 import pl.kurczaczkowe.bills.data.model.Category
-import pl.kurczaczkowe.bills.domain.None
-import pl.kurczaczkowe.bills.domain.onFailure
-import pl.kurczaczkowe.bills.domain.onSuccess
 import pl.kurczaczkowe.bills.domain.usecase.GetCategoryListUseCase
-import pl.kurczaczkowe.bills.ui.screen.base.BaseViewModel
 import javax.inject.Inject
 
 @HiltViewModel

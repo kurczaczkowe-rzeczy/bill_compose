@@ -16,10 +16,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import pl.kurczaczkowe.bills.ui.components.errorScreen.ErrorScreen
 import pl.kurczaczkowe.bills.ui.components.loading.Loading
-import pl.kurczaczkowe.bills.ui.components.prodactCategory.ProductCategory
-import pl.kurczaczkowe.bills.ui.components.prodactCategory.ProductCategoryType
+import pl.gungnir.featureshoppinglist.components.prodactCategory.ProductCategory
+import pl.gungnir.featureshoppinglist.components.prodactCategory.ProductCategoryType
 import pl.kurczaczkowe.bills.R
-import pl.kurczaczkowe.bills.ui.theme.BillsTheme
+import pl.gungnir.base.theme.BillsTheme
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

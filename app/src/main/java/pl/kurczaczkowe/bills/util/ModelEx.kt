@@ -1,7 +1,7 @@
 package pl.kurczaczkowe.bills.util
 
+import pl.gungnir.database.entity.CategoryEntity
 import pl.kurczaczkowe.bills.data.model.Category
-import pl.kurczaczkowe.bills.db.entity.CategoryEntity
 
 fun Category.toCategoryEntity() = CategoryEntity(
     nameCategory = this.name,

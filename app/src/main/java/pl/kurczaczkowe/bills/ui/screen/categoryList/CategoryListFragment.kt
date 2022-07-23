@@ -3,7 +3,7 @@ package pl.kurczaczkowe.bills.ui.screen.categoryList
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import pl.kurczaczkowe.bills.ui.screen.base.*
+import pl.gungnir.base.BaseFragment
 
 @AndroidEntryPoint
 class CategoryListFragment : BaseFragment<CategoryListEvent, CategoryListViewModel>() {

@@ -1,5 +1,5 @@
 package pl.kurczaczkowe.bills.ui.screen.addCategory
 
-import pl.kurczaczkowe.bills.ui.screen.base.SpecificEvent
+import pl.gungnir.base.SpecificEvent
 
 sealed class AddCategoryEvent : SpecificEvent

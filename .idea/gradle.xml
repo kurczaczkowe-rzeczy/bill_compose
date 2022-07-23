@@ -12,6 +12,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/featureshoppinglist" />
+            <option value="$PROJECT_DIR$/base" />
+            <option value="$PROJECT_DIR$/database" />
+            <option value="$PROJECT_DIR$/featureShoppingList" />
+            <option value="$PROJECT_DIR$/myapplication" />
+            <option value="$PROJECT_DIR$/resource" />
+            <option value="$PROJECT_DIR$/resources" />
           </set>
         </option>
       </GradleProjectSettings>

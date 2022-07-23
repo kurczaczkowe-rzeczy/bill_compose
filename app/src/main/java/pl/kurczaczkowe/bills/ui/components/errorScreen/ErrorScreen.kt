@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import pl.kurczaczkowe.bills.R
-import pl.kurczaczkowe.bills.ui.theme.BillsTheme
+import pl.gungnir.base.theme.BillsTheme
 
 @Composable
 fun ErrorScreen(

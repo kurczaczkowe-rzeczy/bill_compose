@@ -41,7 +41,15 @@
         <entry key="../../../../../layout/compose-model-1656258299160.xml" value="1.0" />
         <entry key="../../../../../layout/compose-model-1656259250391.xml" value="0.25" />
         <entry key="../../../../../layout/compose-model-1656858054912.xml" value="0.33" />
+        <entry key="../../../../../layout/compose-model-1657131728453.xml" value="0.16849662162162163" />
+        <entry key="../../../../../layout/compose-model-1658597875738.xml" value="0.1" />
+        <entry key="../../../../../layout/compose-model-1658598210261.xml" value="0.2537037037037037" />
+        <entry key="../../../../../layout/compose-model-1658598302397.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21240942028985507" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.137" />
+        <entry key="resources/src/main/res/drawable/ic_launcher_background.xml" value="0.137" />
+        <entry key="resources/src/main/res/drawable/ic_launcher_foreground.xml" value="0.137" />
+        <entry key="resources/src/main/res/mipmap/ic_launcher.xml" value="0.137" />
       </map>
     </option>
   </component>

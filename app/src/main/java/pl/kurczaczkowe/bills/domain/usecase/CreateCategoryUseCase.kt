@@ -1,10 +1,10 @@
 package pl.kurczaczkowe.bills.domain.usecase
 
+import pl.gungnir.base.BaseUseCase
+import pl.gungnir.base.Either
+import pl.gungnir.base.Failure
+import pl.gungnir.database.domain.repository.CategoryRepository
 import pl.kurczaczkowe.bills.data.model.Category
-import pl.kurczaczkowe.bills.db.entity.CategoryEntity
-import pl.kurczaczkowe.bills.domain.Either
-import pl.kurczaczkowe.bills.domain.repository.CategoryRepository
-import pl.kurczaczkowe.bills.ui.screen.base.Failure
 import pl.kurczaczkowe.bills.util.toCategoryEntity
 
 class CreateCategoryUseCase(

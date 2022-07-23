@@ -1,19 +1,5 @@
 package pl.kurczaczkowe.bills.ui.components.productCategoryList
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyItemScope
-import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import pl.kurczaczkowe.bills.ui.components.productCategoryItem.Entity
-import pl.kurczaczkowe.bills.ui.components.productCategoryItem.ProductCategoryItem
-import pl.kurczaczkowe.bills.ui.components.productCategoryItem.ProductData
-
 //@Composable
 //fun ProductCategoryList(
 //    modifier: Modifier = Modifier,

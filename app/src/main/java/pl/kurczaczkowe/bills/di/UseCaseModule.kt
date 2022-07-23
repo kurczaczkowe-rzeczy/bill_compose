@@ -4,10 +4,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import pl.kurczaczkowe.bills.domain.repository.BuyListRepository
-import pl.kurczaczkowe.bills.domain.repository.CategoryRepository
+import pl.gungnir.database.domain.repository.BuyListRepository
+import pl.gungnir.database.domain.repository.CategoryRepository
 import pl.kurczaczkowe.bills.domain.usecase.CreateCategoryUseCase
-import pl.kurczaczkowe.bills.domain.usecase.GetBuyListUseCase
+import pl.gungnir.featureshoppinglist.useCase.GetBuyListUseCase
 import pl.kurczaczkowe.bills.domain.usecase.GetCategoryListUseCase
 import javax.inject.Singleton
 

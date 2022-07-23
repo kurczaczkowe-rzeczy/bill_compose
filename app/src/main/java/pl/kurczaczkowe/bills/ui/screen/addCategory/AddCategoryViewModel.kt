@@ -5,9 +5,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import pl.gungnir.base.BaseViewModel
 import pl.kurczaczkowe.bills.data.model.Category
 import pl.kurczaczkowe.bills.domain.usecase.CreateCategoryUseCase
-import pl.kurczaczkowe.bills.ui.screen.base.BaseViewModel
 import javax.inject.Inject
 
 @HiltViewModel

@@ -29,7 +29,7 @@ import com.vanpra.composematerialdialogs.rememberMaterialDialogState
 import com.vanpra.composematerialdialogs.title
 import pl.kurczaczkowe.bills.R
 import pl.kurczaczkowe.bills.ui.components.button.Button
-import pl.kurczaczkowe.bills.ui.theme.BillsTheme
+import pl.gungnir.base.theme.BillsTheme
 
 @Composable
 fun AddCategoryScreen(

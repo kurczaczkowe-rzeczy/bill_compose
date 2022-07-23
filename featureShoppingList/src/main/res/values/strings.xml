@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="show_more">Pokaż więcej</string>
+    <string name="show_less">Pokaż mniej</string>
+
+    <string name="left_n">Pozostało: %d</string>
+    <string name="category_name">Nazwa kategorii</string>
+</resources>
