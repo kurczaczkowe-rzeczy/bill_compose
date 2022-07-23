@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    add category-->
+    <string name="add_category_input_description">Wpisz nazwę kategorii</string>
+    <string name="add_category_input_label">Wpisz nazwę nowej kategorii oraz kolor, który pomoże Ci tą kategorię rozpoznać</string>
+    <string name="add_category_initial_value">Zabawki</string>
+    <string name="chooseColor">Wybierz kolor</string>
+    <string name="category_name">Nazwa kategorii</string>
+
+    <!--    category list-->
+    <string name="empty_category_list">Nie masz żadnych kategorii.</string>
+</resources>

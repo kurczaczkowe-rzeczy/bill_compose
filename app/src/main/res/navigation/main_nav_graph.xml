@@ -10,7 +10,7 @@
         android:label="BuyListFragment" />
     <fragment
         android:id="@+id/categoryListFragment"
-        android:name="pl.kurczaczkowe.bills.ui.screen.categoryList.CategoryListFragment"
+        android:name="pl.gungnir.fetaurecategories.screen.categoryList.CategoryListFragment"
         android:label="CategoryListFragment" >
         <action
             android:id="@+id/action_categoryListFragment_to_addCategoryFragment"
@@ -18,6 +18,6 @@
     </fragment>
     <fragment
         android:id="@+id/addCategoryFragment"
-        android:name="pl.kurczaczkowe.bills.ui.screen.addCategory.AddCategoryFragment"
+        android:name="pl.gungnir.fetaurecategories.screen.addCategory.AddCategoryFragment"
         android:label="AddCategoryFragment" />
 </navigation>

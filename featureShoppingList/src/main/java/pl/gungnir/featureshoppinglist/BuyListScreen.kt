@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import pl.gungnir.base.Entity
 import pl.gungnir.base.theme.BillsTheme
-import pl.gungnir.featureshoppinglist.components.prodactCategory.ProductCategory
+import pl.gungnir.components.prodactCategory.ProductCategory
 import pl.gungnir.featureshoppinglist.components.productCategoryItem.ProductCategoryItem
 import pl.gungnir.featureshoppinglist.components.productCategoryItem.ProductData
 import pl.gungnir.featureshoppinglist.data.CategoryProduct

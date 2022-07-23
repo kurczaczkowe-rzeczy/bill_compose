@@ -6,9 +6,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import pl.gungnir.database.domain.repository.BuyListRepository
 import pl.gungnir.database.domain.repository.CategoryRepository
-import pl.kurczaczkowe.bills.domain.usecase.CreateCategoryUseCase
+import pl.gungnir.fetaurecategories.useCase.CreateCategoryUseCase
 import pl.gungnir.featureshoppinglist.useCase.GetBuyListUseCase
-import pl.kurczaczkowe.bills.domain.usecase.GetCategoryListUseCase
+import pl.gungnir.fetaurecategories.useCase.GetCategoryListUseCase
 import javax.inject.Singleton
 
 @Module
@@ -21,9 +21,11 @@ class UseCaseModule {
 
     @Singleton
     @Provides
-    fun provideGetCategoryListUseCase(repository: CategoryRepository) = GetCategoryListUseCase(repository)
+    fun provideGetCategoryListUseCase(repository: CategoryRepository) =
+        GetCategoryListUseCase(repository)
 
     @Singleton
     @Provides
-    fun provideCreateCategoryUseCase(repository: CategoryRepository) = CreateCategoryUseCase(repository)
+    fun provideCreateCategoryUseCase(repository: CategoryRepository) =
+        CreateCategoryUseCase(repository)
 }
