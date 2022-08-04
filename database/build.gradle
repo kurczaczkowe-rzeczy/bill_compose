@@ -54,6 +54,7 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:2.3.0"
     implementation "android.arch.persistence.room:runtime:1.0.0"
     kapt "android.arch.persistence.room:compiler:1.0.0"
+    api "androidx.room:room-runtime:2.3.0"
 
     //hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
