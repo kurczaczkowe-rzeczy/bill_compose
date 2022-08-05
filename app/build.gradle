@@ -52,6 +52,8 @@ android {
 dependencies {
     implementation project(path: ':database')
     implementation project(path: ':base')
+    implementation project(path: ':components')
+
     implementation project(path: ':featureShoppingList')
     implementation project(path: ':fetaureCategories')
 

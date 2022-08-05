@@ -10,11 +10,14 @@ import pl.gungnir.base.BaseViewModel
 import pl.gungnir.base.None
 import pl.gungnir.base.onFailure
 import pl.gungnir.base.onSuccess
+import pl.gungnir.components.toolbar.ToolbarManager
+import pl.gungnir.fetaurecategories.useCase.GetCategoryListUseCase
 import javax.inject.Inject
 
 @HiltViewModel
 class CategoryListViewModel @Inject constructor(
-    private val getCategoriesUseCase: pl.gungnir.fetaurecategories.useCase.GetCategoryListUseCase
+    private val getCategoriesUseCase: GetCategoryListUseCase,
+    val toolbarManager: ToolbarManager
 ) : BaseViewModel<CategoryListEvent>() {
 
     val categoryListState = mutableStateOf<CategoryListState>(CategoryListState.Loading)
@@ -44,5 +47,9 @@ class CategoryListViewModel @Inject constructor(
 
             categoryListState.value = CategoryListState.Success(it)
         }
+    }
+
+    fun onAddCategoryClick(){
+        sendEvent(OpenAddCategory)
     }
 }

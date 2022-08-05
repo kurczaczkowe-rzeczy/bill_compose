@@ -6,10 +6,12 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import pl.gungnir.base.BaseViewModel
+import pl.gungnir.components.toolbar.ToolbarManager
 import javax.inject.Inject
 
 @HiltViewModel
 class AddCategoryViewModel @Inject constructor(
+    val toolbarManager: ToolbarManager,
     private val createCategoryUseCase: pl.gungnir.fetaurecategories.useCase.CreateCategoryUseCase
 ) : BaseViewModel<AddCategoryEvent>() {
 

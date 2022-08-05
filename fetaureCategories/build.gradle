@@ -75,4 +75,8 @@ dependencies {
     //material dialogs
     implementation "io.github.vanpra.compose-material-dialogs:core:0.7.1"
     implementation "io.github.vanpra.compose-material-dialogs:color:0.7.1"
+
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.2"
 }

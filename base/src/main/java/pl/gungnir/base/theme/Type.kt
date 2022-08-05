@@ -20,10 +20,11 @@ val Typography = Typography(
         fontSize = 18.sp
     ),
     h4 = TextStyle(
-        fontWeight = FontWeight.W400,
+        fontWeight = FontWeight.Bold,
         fontSize = 16.sp
     ),
     h5 = TextStyle(
+        fontWeight = FontWeight.Bold,
         fontSize = 14.sp
     ),
     h6 = TextStyle(
@@ -47,11 +48,11 @@ val Typography = Typography(
     ),
     button = TextStyle(
         fontWeight = FontWeight.W400,
-        fontSize = 15.sp,
+        fontSize = 16.sp,
     ),
     caption = TextStyle(
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+        fontSize = 12.sp,
     ),
     overline = TextStyle(
         fontWeight = FontWeight.W400,
