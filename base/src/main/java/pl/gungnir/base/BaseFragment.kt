@@ -65,4 +65,15 @@ abstract class BaseFragment<E : SpecificEvent, T : BaseViewModel<E>> : Fragment(
     ) {
         liveData.observe(this) { body(it.getContentIfNotHandled()) }
     }
+
+    fun openNotImplementDialog() {
+        androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle("Poczekaj chwilę")
+            .setMessage("Dana funkcjonalność nie jest jeszcze gotowa. Nasi deweloperzy robią co mogą, abyś mógł z niej skorzystać jak najszybciej możesz!")
+            .setCancelable(true)
+            .setPositiveButton("OK, rozumiem") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
 }

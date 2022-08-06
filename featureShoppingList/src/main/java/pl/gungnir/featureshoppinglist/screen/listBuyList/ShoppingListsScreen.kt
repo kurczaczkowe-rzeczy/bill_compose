@@ -1,0 +1,3 @@
+package pl.gungnir.featureshoppinglist.screen.listBuyList
+
+class ShoppingListsScreen

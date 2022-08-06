@@ -1,6 +1,5 @@
-package pl.gungnir.featureshoppinglist
+package pl.gungnir.featureshoppinglist.screen.buyList
 
-import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
