@@ -6,13 +6,16 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import pl.gungnir.base.BaseViewModel
+import pl.gungnir.base.onSuccess
 import pl.gungnir.components.toolbar.ToolbarManager
+import pl.gungnir.fetaurecategories.data.Category
+import pl.gungnir.fetaurecategories.useCase.CreateCategoryUseCase
 import javax.inject.Inject
 
 @HiltViewModel
 class AddCategoryViewModel @Inject constructor(
     val toolbarManager: ToolbarManager,
-    private val createCategoryUseCase: pl.gungnir.fetaurecategories.useCase.CreateCategoryUseCase
+    private val createCategoryUseCase: CreateCategoryUseCase
 ) : BaseViewModel<AddCategoryEvent>() {
 
     val newCategoryNameValue = mutableStateOf("")
@@ -32,13 +35,16 @@ class AddCategoryViewModel @Inject constructor(
 
     fun onSaveClick() {
         viewModelScope.launch {
-            createCategoryUseCase.run(
-                params = pl.gungnir.fetaurecategories.data.Category(
-                    id = 0,
+            val result = createCategoryUseCase.run(
+                params = Category(
                     name = newCategoryNameValue.value,
                     color = newCategoryColorValue.value
                 )
             )
+
+            result.onSuccess {
+                sendEvent(Back)
+            }
         }
     }
 }

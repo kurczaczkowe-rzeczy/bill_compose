@@ -19,8 +19,8 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import pl.gungnir.components.productCategoryInfo.ProductCategoryInfo
 import pl.gungnir.components.R
+import pl.gungnir.components.productCategoryInfo.ProductCategoryInfo
 
 enum class ProductCategoryType {
     PRODUCTS,

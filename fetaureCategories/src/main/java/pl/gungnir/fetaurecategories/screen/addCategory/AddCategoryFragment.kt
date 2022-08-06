@@ -20,11 +20,19 @@ class AddCategoryFragment : BaseFragment<AddCategoryEvent, AddCategoryViewModel>
         viewModel.toolbarManager.changeToolbar(
             toolbarState = ToolbarState(
                 title = "Dodaj katerorię",
-                navigationButton = ToolbarIconType.Back{
+                navigationButton = ToolbarIconType.Back {
                     findNavController().navigateUp()
                 }
             )
         )
+    }
+
+    override fun handleEvent(event: AddCategoryEvent) {
+        super.handleEvent(event)
+
+        when (event) {
+            Back -> findNavController().navigateUp()
+        }
     }
 
     @Composable
