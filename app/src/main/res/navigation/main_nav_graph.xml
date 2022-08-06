@@ -2,10 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph.xml"
-    app:startDestination="@id/buyListFragment">
+    app:startDestination="@id/category_nav_graph">
 
     <fragment
         android:id="@+id/buyListFragment"
-        android:name="pl.kurczaczkowe.bills.ui.screen.buyList.BuyListFragment"
+        android:name="pl.gungnir.featureshoppinglist.BuyListFragment"
         android:label="BuyListFragment" />
+
+    <include app:graph="@navigation/category_nav_graph" />
 </navigation>

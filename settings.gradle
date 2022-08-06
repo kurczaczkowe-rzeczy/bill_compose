@@ -14,3 +14,13 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Bills"
 include ':app'
+include ':app:featureshoppinglist'
+include ':featureShoppingList'
+include ':database'
+include ':base'
+include ':myapplication'
+include ':resources'
+include ':resource'
+include ':fetaureCategories'
+include ':components'
+include ':navigation'
