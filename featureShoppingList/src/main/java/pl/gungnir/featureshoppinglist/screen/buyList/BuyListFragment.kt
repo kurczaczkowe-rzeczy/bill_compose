@@ -1,4 +1,4 @@
-package pl.gungnir.featureshoppinglist
+package pl.gungnir.featureshoppinglist.screen.buyList
 
 import android.os.Bundle
 import android.view.View

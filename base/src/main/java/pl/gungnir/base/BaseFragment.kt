@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import pl.gungnir.base.theme.BillsTheme
+import pl.gungnir.failure.R
 
 abstract class BaseFragment<E : SpecificEvent, T : BaseViewModel<E>> : Fragment() {
 
@@ -64,5 +65,16 @@ abstract class BaseFragment<E : SpecificEvent, T : BaseViewModel<E>> : Fragment(
         crossinline body: (T?) -> Unit
     ) {
         liveData.observe(this) { body(it.getContentIfNotHandled()) }
+    }
+
+    fun openNotImplementDialog() {
+        androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle(R.string.not_implemented_dialog_title)
+            .setMessage(R.string.not_implemented_dialog_message)
+            .setCancelable(true)
+            .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }

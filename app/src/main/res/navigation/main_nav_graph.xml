@@ -2,12 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph.xml"
-    app:startDestination="@id/category_nav_graph">
-
-    <fragment
-        android:id="@+id/buyListFragment"
-        android:name="pl.gungnir.featureshoppinglist.BuyListFragment"
-        android:label="BuyListFragment" />
+    app:startDestination="@id/shopping_list_nav_graph">
 
     <include app:graph="@navigation/category_nav_graph" />
+    <include app:graph="@navigation/shopping_list_nav_graph" />
 </navigation>

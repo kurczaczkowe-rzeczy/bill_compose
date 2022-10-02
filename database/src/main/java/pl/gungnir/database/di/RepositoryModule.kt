@@ -9,6 +9,8 @@ import pl.gungnir.database.domain.repository.BuyListRepository
 import pl.gungnir.database.domain.repository.BuyListRepositoryImpl
 import pl.gungnir.database.domain.repository.CategoryRepository
 import pl.gungnir.database.domain.repository.CategoryRepositoryImpl
+import pl.gungnir.database.firebase.FirebaseManager
+import pl.gungnir.database.firebase.FirebaseManagerImpl
 import javax.inject.Singleton
 
 @Module
@@ -17,9 +19,15 @@ class RepositoryModule {
 
     @Singleton
     @Provides
+    fun provideFirebaseManager(): FirebaseManager {
+        return FirebaseManagerImpl()
+    }
+
+    @Singleton
+    @Provides
     fun provideBuyListRepository(
-        categoryDao: CategoryDao
-    ): BuyListRepository = BuyListRepositoryImpl(categoryDao)
+        firebaseManager: FirebaseManager
+    ): BuyListRepository = BuyListRepositoryImpl(firebaseManager)
 
     @Singleton
     @Provides

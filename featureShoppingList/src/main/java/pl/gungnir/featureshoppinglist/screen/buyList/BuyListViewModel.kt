@@ -1,6 +1,5 @@
-package pl.gungnir.featureshoppinglist
+package pl.gungnir.featureshoppinglist.screen.buyList
 
-import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel

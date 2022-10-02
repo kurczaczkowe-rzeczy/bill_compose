@@ -1,7 +1,6 @@
 package pl.gungnir.fetaurecategories.screen.categoryList
 
 import android.content.res.Configuration
-import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,7 +11,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -59,7 +57,6 @@ fun CategoryListScreen(
                         type = ProductCategoryType.CATEGORY_ITEM,
                         categoryColor = category.color
                     ) {
-                        Log.d("MRMRMR", "name: ${category.name} color: ${category.color.toArgb()}")
                         Text(
                             text = category.name,
                             style = MaterialTheme.typography.h4,

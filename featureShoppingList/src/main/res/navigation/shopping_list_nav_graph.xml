@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shopping_list_nav_graph"
+    app:startDestination="@id/shoppingListsFragment">
+
+    <fragment
+        android:id="@+id/buyListFragment"
+        android:name="pl.gungnir.featureshoppinglist.screen.buyList.BuyListFragment"
+        android:label="BuyListFragment">
+        <argument
+            android:name="listId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingListsFragment"
+        android:name="pl.gungnir.featureshoppinglist.screen.listBuyList.ShoppingListsFragment"
+        android:label="ShoppingListsFragment">
+        <action
+            android:id="@+id/action_shoppingListsFragment_to_buyListFragment"
+            app:destination="@id/buyListFragment" />
+    </fragment>
+</navigation>
