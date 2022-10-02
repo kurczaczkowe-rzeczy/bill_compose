@@ -3,16 +3,22 @@ package pl.gungnir.database.domain.repository
 import kotlinx.coroutines.flow.Flow
 import pl.gungnir.base.Either
 import pl.gungnir.base.Failure
-import pl.gungnir.base.right
-import pl.gungnir.database.dao.CategoryDao
+import pl.gungnir.base.Unknown
+import pl.gungnir.base.left
+import pl.gungnir.database.data.ShoppingLists
 import pl.gungnir.database.entity.CategoryEntity
+import pl.gungnir.database.firebase.FirebaseManager
 import javax.inject.Inject
 
 class BuyListRepositoryImpl @Inject constructor(
-    private val categoryDao: CategoryDao
+    private val firebaseManager: FirebaseManager
 ): BuyListRepository {
 
-    override fun getBuyList(id: Int): Either<Nothing, Flow<List<CategoryEntity>>> {
-        return categoryDao.getCategory().right()
+    override fun getBuyList(id: Int): Either<Failure, Flow<List<CategoryEntity>>> {
+        return Unknown.left()
+    }
+
+    override fun getBuyLists(): Flow<List<ShoppingLists>> {
+        return firebaseManager.getShoppingLists()
     }
 }

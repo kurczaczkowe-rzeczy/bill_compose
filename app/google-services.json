@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836524078300",
+    "project_id": "bills-dev-18f49",
+    "storage_bucket": "bills-dev-18f49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836524078300:android:9e72d0139332c26ce33019",
+        "android_client_info": {
+          "package_name": "pl.kurczaczkowe.bills"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836524078300-7bmgce6g1efjpf6kkh8n5km3c30or2da.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx1CfOnMRr2vd5abQ9LOfSMv2YhVjGypU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836524078300-7bmgce6g1efjpf6kkh8n5km3c30or2da.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

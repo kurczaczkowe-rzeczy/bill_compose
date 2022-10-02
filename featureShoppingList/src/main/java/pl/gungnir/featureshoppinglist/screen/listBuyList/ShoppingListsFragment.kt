@@ -1,5 +1,7 @@
 package pl.gungnir.featureshoppinglist.screen.listBuyList
 
+import android.os.Bundle
+import android.view.View
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -13,6 +15,12 @@ import pl.gungnir.featureshoppinglist.R
 class ShoppingListsFragment : BaseFragment<ShoppingListsEvent, ShoppingListsViewModel>() {
 
     override val viewModel: ShoppingListsViewModel by viewModels()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.onInit()
+    }
 
     @Composable
     override fun OnCreateView() {

@@ -1,6 +1,5 @@
 package pl.gungnir.fetaurecategories.screen.categoryList
 
-import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -41,7 +40,6 @@ class CategoryListViewModel @Inject constructor(
 
     private suspend fun handleGetCategorySuccess(response: Flow<List<pl.gungnir.fetaurecategories.data.Category>>){
         response.collect {
-            Log.d("MRMRMR", "collect ${it.map { it.name }}")
             if (it.isEmpty()) {
                 categoryListState.value = CategoryListState.Empty
                 return@collect

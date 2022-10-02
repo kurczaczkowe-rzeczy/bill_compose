@@ -35,7 +35,11 @@ fun ShoppingListsScreen(
                 additionalInfo = {
                     Text(
                         text = LocalContext.current.resources
-                            .getQuantityString(R.plurals.products, item.restAmount),
+                            .getQuantityString(
+                                R.plurals.products,
+                                item.restAmount,
+                                item.restAmount
+                            ),
                         color = Gray,
                         style = MaterialTheme.typography.body2
                     )
