@@ -29,8 +29,8 @@ import pl.gungnir.featureshoppinglist.data.CategoryProduct
 @Composable
 fun BuyListScreen(
     categories: MutableState<List<CategoryProduct>> = mutableStateOf(emptyList()),
-    onClickProduct: (categoryId: Int, productId: Int) -> Unit = { _, _ -> },
-    onCategoryClick: (categoryId: Int) -> Unit = {}
+    onClickProduct: (categoryId: String, productId: String) -> Unit = { _, _ -> },
+    onCategoryClick: (categoryId: String) -> Unit = {}
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize()
@@ -78,37 +78,87 @@ fun BuyListPreview() {
         mutableStateOf(
             listOf(
                 CategoryProduct(
-                    categoryId = 1,
+                    categoryId = "1",
                     name = "Category 1",
                     color = Color.Red,
                     itemList = listOf(
-                        ProductData(id = 1, name = "Apple", amount = 2.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 2, name = "Banana", amount = 6.0, entity = Entity.QUANTITY),
-                        ProductData(id = 3, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM)
+                        ProductData(id = "1", name = "Apple", amount = 2, entity = Entity.KILOGRAM),
+                        ProductData(
+                            id = "2",
+                            name = "Banana",
+                            amount = 6,
+                            entity = Entity.QUANTITY
+                        ),
+                        ProductData(id = "3", name = "Carrot", amount = 1, entity = Entity.KILOGRAM)
                     )
                 ),
                 CategoryProduct(
-                    categoryId = 2,
+                    categoryId = "2",
                     name = "Category 2",
                     color = Color.Green,
                     itemList = listOf(
-                        ProductData(id = 4, name = "Apple", amount = 2.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 5, name = "Banana", amount = 6.0, entity = Entity.QUANTITY),
-                        ProductData(id = 6, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 7, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 8, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 9, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 10, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM),
+                        ProductData(id = "4", name = "Apple", amount = 2, entity = Entity.KILOGRAM),
+                        ProductData(
+                            id = "5",
+                            name = "Banana",
+                            amount = 6,
+                            entity = Entity.QUANTITY
+                        ),
+                        ProductData(
+                            id = "6",
+                            name = "Carrot",
+                            amount = 1,
+                            entity = Entity.KILOGRAM
+                        ),
+                        ProductData(
+                            id = "7",
+                            name = "Carrot",
+                            amount = 1,
+                            entity = Entity.KILOGRAM
+                        ),
+                        ProductData(
+                            id = "8",
+                            name = "Carrot",
+                            amount = 1,
+                            entity = Entity.KILOGRAM
+                        ),
+                        ProductData(
+                            id = "9",
+                            name = "Carrot",
+                            amount = 1,
+                            entity = Entity.KILOGRAM
+                        ),
+                        ProductData(
+                            id = "10",
+                            name = "Carrot",
+                            amount = 1,
+                            entity = Entity.KILOGRAM
+                        ),
                     )
                 ),
                 CategoryProduct(
-                    categoryId = 3,
+                    categoryId = "3",
                     name = "Category 3",
                     color = Color.Blue,
                     itemList = listOf(
-                        ProductData(id = 31, name = "Apple", amount = 2.0, entity = Entity.KILOGRAM),
-                        ProductData(id = 32, name = "Banana", amount = 6.0, entity = Entity.QUANTITY),
-                        ProductData(id = 33, name = "Carrot", amount = 1.0, entity = Entity.KILOGRAM)
+                        ProductData(
+                            id = "31",
+                            name = "Apple",
+                            amount = 2,
+                            entity = Entity.KILOGRAM
+                        ),
+                        ProductData(
+                            id = "32",
+                            name = "Banana",
+                            amount = 6,
+                            entity = Entity.QUANTITY
+                        ),
+                        ProductData(
+                            id = "33",
+                            name = "Carrot",
+                            amount = 1,
+                            entity = Entity.KILOGRAM
+                        )
                     )
                 ),
             )

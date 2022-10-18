@@ -9,7 +9,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import pl.gungnir.base.BaseFragment
 import pl.gungnir.components.toolbar.ToolbarIconType
 import pl.gungnir.components.toolbar.ToolbarState
-import pl.gungnir.featureshoppinglist.R
 
 @AndroidEntryPoint
 class ShoppingListsFragment : BaseFragment<ShoppingListsEvent, ShoppingListsViewModel>() {
@@ -37,7 +36,11 @@ class ShoppingListsFragment : BaseFragment<ShoppingListsEvent, ShoppingListsView
             AddNewList -> openNotImplementDialog()
             OpenFilters -> openNotImplementDialog()
             is OpenList -> {
-                findNavController().navigate(R.id.action_shoppingListsFragment_to_buyListFragment)
+                val directions =
+                    ShoppingListsFragmentDirections.actionShoppingListsFragmentToBuyListFragment(
+                        event.listId
+                    )
+                findNavController().navigate(directions)
             }
         }
     }

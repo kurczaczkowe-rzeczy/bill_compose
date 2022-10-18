@@ -10,7 +10,7 @@
         android:label="BuyListFragment">
         <argument
             android:name="listId"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/shoppingListsFragment"

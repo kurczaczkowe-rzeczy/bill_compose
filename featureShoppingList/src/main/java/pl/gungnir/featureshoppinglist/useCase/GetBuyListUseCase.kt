@@ -3,43 +3,35 @@ package pl.gungnir.featureshoppinglist.useCase
 import androidx.compose.ui.graphics.Color
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import pl.gungnir.base.*
+import pl.gungnir.base.BaseUseCase
+import pl.gungnir.base.getEntityByShort
 import pl.gungnir.database.domain.repository.BuyListRepository
 import pl.gungnir.featureshoppinglist.components.productCategoryItem.ProductData
 import pl.gungnir.featureshoppinglist.data.CategoryProduct
 
 class GetBuyListUseCase(
     private val buyListRepository: BuyListRepository
-) : BaseUseCase<Either<Failure, Flow<List<CategoryProduct>>>, Int>() {
+) : BaseUseCase<Flow<List<CategoryProduct>>, String>() {
 
-    override suspend fun run(params: Int): Either<Failure, Flow<List<CategoryProduct>>> {
-        return buyListRepository.getBuyList(params).flatMap {
-            it.map {
-                it.map{ category ->
+    override suspend fun run(params: String): Flow<List<CategoryProduct>> {
+        return buyListRepository.getBuyList(params).map {
+            it.groupBy { it.productCategory }
+                .map { (categoryName, items) ->
                     CategoryProduct(
-                        categoryId = category.idCategory ?: -1,
-                        name = category.nameCategory,
-                        color = Color(category.colorCategory),
-                        isVisible = false,
-                        itemList = listOf(
+                        categoryId = categoryName,
+                        name = categoryName,
+                        color = Color.Black,
+                        itemList = items.map {
                             ProductData(
-                                id = 0,
-                                name = "Name",
-                                amount = 0.0,
-                                entity = Entity.KILOGRAM,
-                                isBought = false
-                            ),
-                            ProductData(
-                                id = 1,
-                                name = "Name",
-                                amount = 0.0,
-                                entity = Entity.KILOGRAM,
-                                isBought = false
+                                id = it.id,
+                                name = it.name,
+                                amount = it.amount,
+                                entity = it.unit.getEntityByShort(),
+                                isBought = it.inCart
                             )
-                        )
+                        }
                     )
                 }
-            }.right()
         }
     }
 }

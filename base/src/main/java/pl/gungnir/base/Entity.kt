@@ -23,3 +23,16 @@ fun Entity.getUnitShort(): String {
         Entity.PACK -> "kpl."
     }
 }
+
+fun String.getEntityByShort(): Entity {
+    return when (this) {
+        "m" -> Entity.METER
+        "cm" -> Entity.CENTIMETER
+        "l" -> Entity.LITER
+        "ml" -> Entity.MILLILITER
+        "kg" -> Entity.KILOGRAM
+        "g" -> Entity.GRAM
+        "kpl." -> Entity.PACK
+        else -> Entity.QUANTITY
+    }
+}

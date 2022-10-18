@@ -24,7 +24,7 @@ fun ProductCategoryItem(
     modifier: Modifier = Modifier,
     product: ProductData,
     backgroundColor: Color = Color.White,
-    onClick: (Int) -> Unit = {},
+    onClick: (String) -> Unit = {},
 ) {
     val colorText by animateColorAsState(targetValue = if (product.isBought) MaterialTheme.colors.onBackground.copy(alpha = 0.6f) else MaterialTheme.colors.onBackground)
     val width by animateFloatAsState(targetValue = if(product.isBought) 1f else 0f)
@@ -70,7 +70,7 @@ fun ProductItemPreview() {
     val product = remember{
         mutableStateOf(
             ProductData(
-                id = 0, name = "Jabłko", amount = 1.0, entity = Entity.KILOGRAM, isBought = true
+                id = "", name = "Jabłko", amount = 1, entity = Entity.KILOGRAM, isBought = true
             )
         )
     }

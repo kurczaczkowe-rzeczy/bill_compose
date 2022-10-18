@@ -9,6 +9,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.map
+import pl.gungnir.database.data.ShoppingItem
 import pl.gungnir.database.data.ShoppingLists
 import javax.inject.Inject
 
@@ -27,6 +28,28 @@ class FirebaseManagerImpl @Inject constructor() : FirebaseManager {
                 }
             }
 
+    }
+
+    override fun getShoppingItems(shoppingListId: String): Flow<List<ShoppingItem>> {
+        return Firebase.firestore.collection("shoppingLists")
+            .document(shoppingListId)
+            .collection("shoppingList")
+            .snapshotFlow()
+            .map {
+                it.documents.mapNotNull { document ->
+
+                    document.data?.let {
+                        ShoppingItem(
+                            id = document.id,
+                            productCategory = it.getOrDefault("productCategory", "") as String,
+                            name = it.getOrDefault("productName", "") as String,
+                            amount = it.getOrDefault("amount", 0) as Long,
+                            inCart = it.getOrDefault("inCart", false) as Boolean,
+                            unit = it.getOrDefault("unit", "szt") as String,
+                        )
+                    }
+                }
+            }
     }
 }
 
